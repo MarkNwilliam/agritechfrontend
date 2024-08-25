@@ -53,12 +53,12 @@ export default function Page() {
     });
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/customer_ai", {
+      const response = await fetch("https://agritechbackend-c2cpd4gwbvg4cha7.eastus-01.azurewebsites.net/customer_ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        
+
         body: JSON.stringify({
           data: csvData,
           prompt: prompt
