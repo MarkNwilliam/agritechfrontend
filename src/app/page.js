@@ -44,9 +44,14 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <main style={{ flex: 1, padding: '1em' }} className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1 style={{ color: '#343a40' }}>Hi</h1>
-      </main>
+      <main style={{ flex: 1, padding: '1em', textAlign: 'center' }} className="flex min-h-screen flex-col items-center justify-center p-24">
+  <h1 style={{ color: '#343a40', fontSize: '2.5em', marginBottom: '0.5em' }}>Welcome to Our Platform</h1>
+  <p style={{ color: '#6c757d', fontSize: '1.2em', maxWidth: '800px' }}>
+    We provide a comprehensive suite of tools to help you manage your farm, analyze your finances, 
+    understand your customers, and much more. Select an option from the sidebar to get started.
+  </p>
+  <img src="/agritech_home_image.jpg" alt="Welcome image" style={{ marginTop: '2em', maxWidth: '100%', height: 'auto' }} />
+</main>
     </div>
   );
 }
