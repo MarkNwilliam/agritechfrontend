@@ -1,37 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI-Powered Farm Management Platform
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+Our AI-powered platform revolutionizes farm management and analysis, offering an intuitive drag-and-drop interface that simplifies data processing. Farmers can upload CSV files to access AI-generated reports on various critical aspects of their operations.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Key features include:
+- Comprehensive Dashboard
+- Detailed My Farm section
+- Financial Analysis
+- Feedback Analysis
+- Customer Analysis
+- Disease Analysis
+- Sales Forecasting
+- Virtual Agronomist
+- Social Media Integration (Twitter and LinkedIn)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This holistic approach empowers farmers with data-driven insights to make informed decisions, improve productivity, and maintain a healthy, profitable farm.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Backend Repository
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The backend code for this project is available at:
+[https://github.com/MarkNwilliam/agritech](https://github.com/MarkNwilliam/agritech)
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+### AI and Machine Learning
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **IBM Watson AI**: We utilize IBM Watson's foundation models, specifically the GRANITE_13B_CHAT_V2 model, for natural language processing and generation. This powers our AI-driven insights across various farm management aspects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Prophet**: For time series forecasting, we use Facebook's Prophet library. It's particularly effective for sales forecasting with strong seasonal effects and several seasons of historical data.
 
-## Deploy on Vercel
+### APIs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **ISDA Africa Soil Property API**: We integrate this API to fetch soil data based on geographical coordinates. This information is crucial for our virtual agronomist feature, providing soil-specific agricultural advice.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# agritechfrontend
+### Backend Framework
+
+- **Flask**: Our backend is built using Flask, a lightweight WSGI web application framework in Python.
+
+## Backend API Overview
+
+Our backend provides a robust set of APIs to support the platform's functionality:
+
+1. `/hello` (GET)
+   - A simple endpoint to check if the server is running.
+
+2. `/test_ai` (POST)
+   - Tests the AI model with a given prompt.
+
+3. `/forecast` (POST)
+   - Generates sales forecasts based on provided CSV data.
+   - Uses Prophet for forecasting and IBM Watson AI for explanations.
+
+4. `/my_farm/crop_planning` (POST)
+   - Provides crop planning recommendations based on farm data.
+
+5. `/financial_analysis/cash_flow_forecast` (POST)
+   - Generates a 12-month cash flow forecast based on financial data.
+
+6. `/disease_analysis/early_detection` (POST)
+   - Analyzes crop data for early signs of disease and provides recommendations.
+
+7. `/twitter_ai` (POST)
+   - Generates engaging Twitter posts for farm-related topics.
+
+8. `/linkedin_ai` (POST)
+   - Creates professional LinkedIn posts about farm-related subjects.
+
+9. `/finance_ai` (POST)
+   - Processes financial data and provides a detailed report with recommendations.
+
+10. `/customer_ai` (POST)
+    - Analyzes customer data and generates insights for marketing strategies.
+
+11. `/feedback_ai` (POST)
+    - Processes customer feedback and provides actionable insights.
+
+12. `/disease_ai` (POST)
+    - Analyzes animal health data to detect potential illnesses and suggest actions.
+
+13. `/agronomist_ai` (POST)
+    - Integrates soil data from the ISDA Africa API and provides agronomic advice.
+
+## Category Tags
+- Productivity
+- Project Management
+- Utility and Tools
+
+## Installation
+
