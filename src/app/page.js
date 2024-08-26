@@ -32,6 +32,20 @@ export default function Home() {
               <p style={{ color: '#007bff', textDecoration: 'none' }}>Disease Analysis</p>
             </Link>
           </li>
+
+          <li style={{ marginBottom: '1em' }}>
+            <Link href="/forecast">
+              <p style={{ color: '#007bff', textDecoration: 'none' }}>Forecast</p>
+            </Link>
+          </li>
+
+
+          <li style={{ marginBottom: '1em' }}>
+            <Link href="/agronomist">
+              <p style={{ color: '#007bff', textDecoration: 'none' }}>Agronomist</p>
+            </Link>
+          </li>
+
           <li style={{ marginBottom: '1em' }}>
             <Link href="/twitter">
               <p style={{ color: '#007bff', textDecoration: 'none' }}>Twitter</p>
