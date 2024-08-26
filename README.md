@@ -1,5 +1,9 @@
 # AI-Powered Farm Management Platform
 
+## Try it out
+
+https://happy-desert-0cf68191e.5.azurestaticapps.net/
+
 ## Project Description
 
 Our AI-powered platform revolutionizes farm management and analysis, offering an intuitive drag-and-drop interface that simplifies data processing. Farmers can upload CSV files to access AI-generated reports on various critical aspects of their operations.
@@ -87,5 +91,10 @@ Our backend provides a robust set of APIs to support the platform's functionalit
 - Project Management
 - Utility and Tools
 
-## Installation
+## Demo
+
+![Create-Next-App](https://github.com/user-attachments/assets/c3d2db91-313f-484e-97a5-0fabccbb41c1)
+![happy-desert-0cf68191e-5-azurestaticapps-net-agronomist](https://github.com/user-attachments/assets/f7d9361e-4152-4419-9547-18a883bbf219)
+
+
 
