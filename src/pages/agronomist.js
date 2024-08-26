@@ -96,7 +96,13 @@ const Page = () => {
       <Link href="/" className="absolute top-0 left-0 mt-2 ml-2">
         <ArrowLeftIcon className="text-blue-500" style={{ height: '20px', width: '20px' }} />
       </Link>
+      <div>
+
       <h1 className="text-3xl font-bold mb-6">Agronomist</h1>
+      <p className="text-xl mb-4">
+    To use the forecast feature, your data needs to be structured in a specific way. It should be a DataFrame with two columns:
+  </p>
+</div>
       <div id="map" style={{ height: '300px', width: '100%' }}></div>
       
       <div style={{ padding: '10px' }}>

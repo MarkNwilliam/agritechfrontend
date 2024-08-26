@@ -186,7 +186,23 @@ export default function Forecast() {
       <Link href="/" className="absolute top-0 left-0 mt-2 ml-2">
         <ArrowLeftIcon className="text-blue-500" style={{ height: '20px', width: '20px' }} />
       </Link>
-      <h1 className="text-3xl font-bold mb-6">Forecast</h1>
+      <div>
+  <h1 className="text-3xl font-bold mb-6">Forecast</h1>
+  <p className="text-xl mb-4">
+    To use the forecast feature, your data needs to be structured in a specific way. It should be a DataFrame with two columns:
+  </p>
+  <ul className="list-disc ml-5 mb-4">
+    <li className="mb-2">
+      <code>ds</code>: This column should contain the timestamps for your data. It should be of type datetime.
+    </li>
+    <li>
+      <code>y</code>: This column should contain the values you want to forecast.
+    </li>
+  </ul>
+  <p className="text-xl">
+    Once your data is structured correctly, you can upload it to start the forecast.
+  </p>
+</div>
       
       <div className="mb-4">
         <label htmlFor="csvInput" className="block text-sm font-medium text-gray-700 mb-2">
