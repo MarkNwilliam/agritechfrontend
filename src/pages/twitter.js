@@ -23,7 +23,7 @@ export default function Page() {
       }
     });
 
-    axios.post('https://agritechbackend-c2cpd4gwbvg4cha7.eastus-01.azurewebsites.net/twitter_ai', { prompt: newPost })
+    axios.post('https://agritechbackend-c2cpd4gwbvg4cha7.canadacentral-01.azurewebsites.net/twitter_ai', { prompt: newPost })
       .then((response) => {
         setPost(response.data.response);
         Swal.fire({

@@ -4,6 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+
 
 // Dynamically load Leaflet with no SSR (Server-Side Rendering)
 const Map = dynamic(() => import('leaflet'), { ssr: false });
@@ -25,7 +27,7 @@ const Page = () => {
 
     // Make the API call
     try {
-      const response = await fetch('https://agritechbackend-c2cpd4gwbvg4cha7.eastus-01.azurewebsites.net/agronomist_ai', {
+      const response = await fetch('https://agritechbackend-c2cpd4gwbvg4cha7.canadacentral-01.azurewebsites.net/agronomist_ai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

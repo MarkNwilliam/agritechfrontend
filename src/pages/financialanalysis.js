@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import Swal from 'sweetalert2';
+import ReactMarkdown from 'react-markdown';
 
 export default function FinancialAnalysis() {
   const [csvData, setCsvData] = useState(null);
@@ -53,7 +54,7 @@ export default function FinancialAnalysis() {
     });
 
     try {
-      const response = await fetch("https://agritechbackend-c2cpd4gwbvg4cha7.eastus-01.azurewebsites.net/finance_ai", {
+      const response = await fetch("https://agritechbackend-c2cpd4gwbvg4cha7.canadacentral-01.azurewebsites.net/finance_ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -122,49 +123,57 @@ export default function FinancialAnalysis() {
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-  <label htmlFor="prompt" style={{ display: 'block', fontSize: '16px', fontWeight: 'bold', color: '#4a4a4a', marginBottom: '8px' }}>
-    Prompt
-  </label>
-  <textarea
-    id="prompt"
-    value={prompt}
-    onChange={(e) => setPrompt(e.target.value)}
-    style={{ width: '100%', padding: '12px', fontSize: '14px', color: '#4a4a4a', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '16px' }}
-    rows="4"
-  ></textarea>
-</div>
+        <label htmlFor="prompt" style={{ display: 'block', fontSize: '16px', fontWeight: 'bold', color: '#4a4a4a', marginBottom: '8px' }}>
+          Prompt
+        </label>
+        <textarea
+          id="prompt"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          style={{ width: '100%', padding: '12px', fontSize: '14px', color: '#4a4a4a', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '16px' }}
+          rows="4"
+        ></textarea>
+      </div>
 
-<button
-  onClick={handleSendData}
-  style={{ backgroundColor: '#007bff', color: '#fff', fontWeight: 'bold', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }}
-  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#0056b3'}
-  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#007bff'}
->
-  Generate Report
-</button>
+      <button
+        onClick={handleSendData}
+        style={{ backgroundColor: '#007bff', color: '#fff', fontWeight: 'bold', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }}
+        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#0056b3'}
+        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#007bff'}
+      >
+        Generate Report
+      </button>
 
-<div style={{ marginBottom: '24px' }}>
-  <label htmlFor="generatedResponse" style={{ display: 'block', fontSize: '16px', fontWeight: 'bold', color: '#4a4a4a', marginBottom: '8px' }}>
-    Generated Response:
-  </label>
-  <textarea
-    id="generatedResponse"
-    value={generatedResponse}
-    onChange={(e) => setGeneratedResponse(e.target.value)}
-    style={{ width: '100%', padding: '12px', fontSize: '14px', color: '#4a4a4a', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '16px' }}
-    rows="10"
-    readOnly
-  ></textarea>
-</div>
+      <div style={{ marginBottom: '24px' }}>
+        <label htmlFor="generatedResponse" style={{ display: 'block', fontSize: '16px', fontWeight: 'bold', color: '#4a4a4a', marginBottom: '8px' }}>
+          Generated Response:
+        </label>
+        <div 
+          style={{ 
+            width: '100%',
+            padding: '12px',
+            fontSize: '14px',
+            color: '#4a4a4a',
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            marginBottom: '16px',
+            minHeight: '200px',
+            backgroundColor: '#fff',
+            overflowY: 'auto'
+          }}
+        >
+          <ReactMarkdown>{generatedResponse}</ReactMarkdown>
+        </div>
+      </div>
 
-<button
-  onClick={handleDownloadReport}
-  style={{ backgroundColor: '#28a745', color: '#fff', fontWeight: 'bold', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }}
-  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#218838'}
-  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#28a745'}
->
-  Download Report
-</button>
+      <button
+        onClick={handleDownloadReport}
+        style={{ backgroundColor: '#28a745', color: '#fff', fontWeight: 'bold', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }}
+        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#218838'}
+        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#28a745'}
+      >
+        Download Report
+      </button>
     </div>
   );
 }

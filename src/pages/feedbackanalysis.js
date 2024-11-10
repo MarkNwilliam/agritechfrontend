@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import Swal from 'sweetalert2';
+import ReactMarkdown from 'react-markdown';
+
 
 export default function FeedbackAnalysis() {
   const [csvData, setCsvData] = useState(null);
@@ -53,7 +55,7 @@ export default function FeedbackAnalysis() {
     });
 
     try {
-      const response = await fetch("https://agritechbackend-c2cpd4gwbvg4cha7.eastus-01.azurewebsites.net/feedback_ai", {
+      const response = await fetch("https://agritechbackend-c2cpd4gwbvg4cha7.canadacentral-01.azurewebsites.net/feedback_ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -147,14 +149,7 @@ export default function FeedbackAnalysis() {
   <label htmlFor="generatedResponse" style={{ display: 'block', fontSize: '16px', fontWeight: 'bold', color: '#4a4a4a', marginBottom: '8px' }}>
     Generated Response:
   </label>
-  <textarea
-    id="generatedResponse"
-    value={generatedResponse}
-    onChange={(e) => setGeneratedResponse(e.target.value)}
-    style={{ width: '100%', padding: '12px', fontSize: '14px', color: '#4a4a4a', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '16px' }}
-    rows="10"
-    readOnly
-  ></textarea>
+  <ReactMarkdown>{generatedResponse}</ReactMarkdown>
 </div>
 
 <button
